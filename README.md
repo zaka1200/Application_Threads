@@ -1,5 +1,13 @@
 # Application_Threads
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Définitions](#définitions)
+- [Serveur](#serveur)
+- [Client](#client)
+- [Résultats](#résultats)
+- [Conclusion](#conclusion)
+
 # Introduction
 
 Ce rapport présente les résultats obtenus lors de la réalisation de l'exercice consistant à créer une application utilisant des threads pour résoudre un problème de devinette. L'objectif était de mettre en place un serveur qui génère un nombre aléatoire, puis d'interagir avec un client pour deviner ce nombre en utilisant des threads pour gérer les connexions et les échanges de messages.
