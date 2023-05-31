@@ -1,17 +1,17 @@
 # Application_Threads
 
-### Introduction
+# Introduction
 
 Ce rapport présente les résultats obtenus lors de la réalisation de l'exercice consistant à créer une application utilisant des threads pour résoudre un problème de devinette. L'objectif était de mettre en place un serveur qui génère un nombre aléatoire, puis d'interagir avec un client pour deviner ce nombre en utilisant des threads pour gérer les connexions et les échanges de messages.
 
-### Définitions
+# Définitions
 
 - **Thread** : Un thread est un flux d'exécution léger qui permet d'effectuer des tâches en parallèle. Dans notre application, chaque client est géré par un thread séparé, ce qui permet au serveur de gérer plusieurs connexions simultanément.
 - **Serveur** : Dans ce contexte, le serveur fait référence à l'application qui génère un nombre aléatoire et qui communique avec le client pour donner des indications sur la devinette.
 - **Client** : Le client est l'application qui interagit avec le serveur en entrant des valeurs pour essayer de deviner le nombre généré.
 
 
-#### Serveur
+# Serveur
 
 Le code du serveur utilise des sockets pour gérer la communication avec les clients.
 
@@ -24,11 +24,9 @@ import java.net.Socket;
 import java.util.Random;
 
 public class Server {
-    // Constante définissant le nombre maximum d'essais pour deviner le nombre
+
     private static final int MAX_ATTEMPTS = 10;
-
     private int randomNumber;
-
     public Server() {
         // Génère un nombre aléatoire entre 0 et 10
         randomNumber = new Random().nextInt(11);
@@ -135,7 +133,7 @@ La classe ClientHandler est une classe interne qui implémente l'interface Runna
 
 La méthode main crée une instance du serveur et lance l'écoute des connexions.
 
-#### Client
+# Client
 
 ```java 
 import java.io.IOException;
@@ -210,7 +208,7 @@ Le code du client commence par créer une socket et se connecte au serveur en ut
 Le client utilise une boucle pour permettre au joueur de deviner le nombre autant de fois que possible jusqu'à ce qu'il devine correctement ou atteigne le nombre maximum d'essais. À chaque itération de la boucle, le client demande à l'utilisateur d'entrer une valeur, puis envoie cette valeur au serveur en utilisant la méthode output.write(). Ensuite, il lit la réponse du serveur à l'aide de input.read(), convertit les octets en une chaîne de caractères et l'affiche à l'utilisateur. Si le client devine correctement, il est félicité et la boucle s'arrête. Si le client dépasse le nombre maximum d'essais, il affiche un message approprié. Enfin, le client ferme la socket et le scanner.
 
 
-### Résultats
+# Résultats
 
 Pour visualiser les résultats de l'application, veuillez consulter les captures d'écran suivantes :
 
@@ -243,6 +241,6 @@ on va essayer de gangner une partie
 # 
 Ces captures d'écran illustrent le fonctionnement de l'application, où le client tente de deviner le nombre généré par le serveur en fonction des indications reçues.
 
-### Conclusion
+# Conclusion
 
 En conclusion, l'application développée en utilisant des threads a permis de résoudre l'exercice avec succès. Le serveur est capable de gérer plusieurs connexions de clients simultanément, tandis que les clients peuvent interagir avec le serveur pour deviner le nombre généré. L'utilisation de threads et de sockets offre une communication en temps réel entre le serveur et les clients, ce qui est très utile dans les scénarios nécessitant une gestion simultanée de plusieurs clients.
